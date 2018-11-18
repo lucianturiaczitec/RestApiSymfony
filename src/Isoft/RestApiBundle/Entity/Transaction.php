@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Isoft\RestApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
