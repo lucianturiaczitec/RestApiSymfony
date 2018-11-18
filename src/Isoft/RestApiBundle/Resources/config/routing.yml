@@ -1,0 +1,3 @@
+isoft_rest_api_controller:
+    type:     rest
+    resource: Isoft\RestApiBundle\Controller\RestController

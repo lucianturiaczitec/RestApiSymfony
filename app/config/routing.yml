@@ -1,0 +1,20 @@
+isoft_o_auth:
+    resource: "@IsoftOAuthBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+isoft_user:
+    resource: "@IsoftUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+isoft_rest_api:
+    resource: "@IsoftRestApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
