@@ -1,1 +1,33 @@
-Hello World!
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/listing.css') }}"
+{% endblock %}
+{% block body %}
+    <div style="margin-left: 20px">
+        <h4>Number of transactions: {{ transactions.getTotalItemCount }}</h4>
+    </div>
+    <table class="table-fill table table-hover table-responsive" style="width: 500px; margin-left: 20px">
+        <thead>
+        <tr>
+            <th class="text-left">{{ knp_pagination_sortable(transactions, 'Transaction ID', 'transactionId ') }}</th>
+            <th class="text-left">{{ knp_pagination_sortable(transactions, 'Customer ID', 'customerId') }}</th>
+            <th class="text-left">{{ knp_pagination_sortable(transactions, 'Amount', 'amount' ) }}</th>
+            <th class="text-left">{{ knp_pagination_sortable(transactions, 'Date', 'date' ) }}</th>
+        </tr>
+
+        </thead>
+        <tbody class="table-hover">
+        {% for transaction in transactions %}
+            <tr>
+                <td class="text-left">{{ transaction.transactionId }}</td>
+                <td class="text-left">{{ transaction.customerId }}</td>
+                <td class="text-left">{{ transaction.amount }}</td>
+                <td class="text-left">{{ transaction.date|date('Y-m-d') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation" style="margin-left: 20px">
+        {{ knp_pagination_render(transactions) }}
+    </div>
+{% endblock %}

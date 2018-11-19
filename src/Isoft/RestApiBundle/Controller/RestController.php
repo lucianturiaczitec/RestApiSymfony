@@ -119,7 +119,7 @@ class RestController extends FOSRestController
         ];
 
         $view = $this->view($output, 200);
-        $logger->info("Add transaction success!" . PHP_EOL . $output);
+        $logger->info("Add transaction success!");
         return $this->handleView($view);
     }
 
@@ -163,7 +163,7 @@ class RestController extends FOSRestController
         ];
 
         $view = $this->view($output, 200);
-        $logger->info("Update transaction success!" . PHP_EOL . $output);
+        $logger->info("Update transaction success!");
         return $this->handleView($view);
     }
 

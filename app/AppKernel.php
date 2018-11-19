@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Isoft\OAuthBundle\IsoftOAuthBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
