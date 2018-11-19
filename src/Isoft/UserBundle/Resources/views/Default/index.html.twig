@@ -6,6 +6,23 @@
     <div style="margin-left: 20px">
         <h4>Number of transactions: {{ transactions.getTotalItemCount }}</h4>
     </div>
+    <form action="" method="get" style="margin-left: 20px">
+        <div class="row">
+            <div class="col-xs-1">
+                <label for="customerId">Customer Id</label>
+                <input class="form-control" name="customerId" type="text">
+            </div>
+            <div class="col-xs-1">
+                <label for="amount">Amount</label>
+                <input class="form-control" name="amount" type="text">
+            </div>
+            <div class="col-xs-1">
+                <label for="date">Date</label>
+                <input class="form-control" name="date" type="text">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default btn-sm" style="margin: 10px">Filter Now</button>
+    </form>
     <table class="table-fill table table-hover table-responsive" style="width: 500px; margin-left: 20px">
         <thead>
         <tr>
@@ -30,4 +47,21 @@
     <div class="navigation" style="margin-left: 20px">
         {{ knp_pagination_render(transactions) }}
     </div>
+    <div class="row" style="margin-left: 20px" >
+        <div class="col-xs-1">
+            <select class="form-control" name="limit" form="limit">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+        <div class="col-xs-1">
+            <form id="limit" action="" method="get">
+                <button type="submit" class="btn btn-default btn-sm">Set Limit</button>
+            </form>
+        </div>
+    </div>
+
+
+
 {% endblock %}
